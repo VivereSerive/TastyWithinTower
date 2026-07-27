@@ -7,11 +7,25 @@
 [sub_resource type="Resource" id="Resource_f2r3t"]
 script = ExtResource("3_f41y5")
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xc2gc"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_f41y5"]
+sky_material = SubResource("ProceduralSkyMaterial_xc2gc")
+
+[sub_resource type="Environment" id="Environment_f2r3t"]
+background_mode = 2
+sky = SubResource("Sky_f41y5")
+glow_enabled = true
+
 [node name="inDev" type="Node3D" unique_id=1781745496]
 
 [node name="mainCamera3D" type="Camera3D" parent="." unique_id=935025186]
 
 [node name="environment" type="Node" parent="." unique_id=641294675]
+
+[node name="node3d" type="Node3D" parent="environment" unique_id=538701357]
 
 [node name="playerGroup" type="Node" parent="." unique_id=2106303351]
 
@@ -21,3 +35,12 @@ script = ExtResource("3_f41y5")
 script = ExtResource("2_xc2gc")
 tween_resource = SubResource("Resource_f2r3t")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="atmosphere" type="Node" parent="." unique_id=1658552937]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="atmosphere" unique_id=125135394]
+environment = SubResource("Environment_f2r3t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="atmosphere" unique_id=1953691829]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
