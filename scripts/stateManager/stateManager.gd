@@ -1,11 +1,42 @@
+### stateManger.gd
 extends Node
 
+## Parameters
+@export_group("State Parameters")
+@export var initialState: state
+@export var currentState: state
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+## Function Declerations
+func init():
+	var parent = get_parent() # Grabs Parent
+	
+	# Delegates stateManagers parent to its children
+	for child in get_children():
+		child.parent = parent
+		
+	## Init to initial state 
+	changeState(initialState)
 
+func changeState(newState: state) -> void:
+	# Call any exit logic
+	if currentState:
+		currentState.exit()
+	# Changing to new state
+	currentState = newState
+	currentState.enter()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+# Handles state changes as needed
+func processPhysics(delta: float) -> void:
+	var newState = currentState.processPhysics(delta)
+	if newState:
+		changeState(newState)
+
+func processInput(event: InputEvent) -> void:
+	var newState = currentState.processInput(event)
+	if newState:
+		changeState(newState)
+
+func processFrame(delta: float) -> void:
+	var newState = currentState.processFrame(delta)
+	if newState:
+		changeState(newState)
