@@ -2,7 +2,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_51dht"]
 
-[node name="player3d" type="CharacterBody3D" unique_id=925378079]
+[node name="player3D" type="CharacterBody3D" unique_id=925378079]
 
 [node name="playerVisual" type="Node3D" parent="." unique_id=1842644118]
 
@@ -14,8 +14,8 @@ shape = SubResource("CapsuleShape3D_51dht")
 
 [node name="stateManager" type="Node" parent="." unique_id=105672237]
 
-[node name="stateMove" type="Node" parent="stateManager" unique_id=1288070699]
+[node name="playerMove3D" type="Node" parent="stateManager" unique_id=1288070699]
 
-[node name="stateSprint" type="Node" parent="stateManager" unique_id=183144869]
+[node name="playerSprint3D" type="Node" parent="stateManager" unique_id=183144869]
 
-[node name="stateJump" type="Node" parent="stateManager" unique_id=2109547622]
+[node name="playerJump3D" type="Node" parent="stateManager" unique_id=2109547622]
