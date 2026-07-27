@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c3xt7je8lj34o"]
+
+[ext_resource type="PackedScene" uid="uid://bm76et60hvc36" path="res://scenes/entities/player/player3D.tscn" id="1_kqko7"]
+
+[node name="inDev" type="Node3D" unique_id=1781745496]
+
+[node name="mainCamera3D" type="Camera3D" parent="." unique_id=935025186]
+
+[node name="environment" type="Node" parent="." unique_id=641294675]
+
+[node name="playerGroup" type="Node" parent="." unique_id=2106303351]
+
+[node name="player3d" parent="playerGroup" unique_id=925378079 instance=ExtResource("1_kqko7")]
