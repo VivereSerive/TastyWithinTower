@@ -1,42 +1,73 @@
 [gd_scene format=3 uid="uid://t3rbcdp2jhny"]
 
+[ext_resource type="FontFile" uid="uid://chgq7nc0keekd" path="res://assets/fonts/urbanist/static/Urbanist-ExtraBold.ttf" id="1_4jglm"]
+[ext_resource type="FontFile" uid="uid://bwdem61a18xg3" path="res://assets/fonts/urbanist/static/Urbanist-BoldItalic.ttf" id="1_f44hk"]
+
 [node name="mainMenu" type="Control" unique_id=1050332981]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="menuBackground" type="Node" parent="." unique_id=1986164402]
-
-[node name="colorRect" type="ColorRect" parent="menuBackground" unique_id=481581813]
+[node name="tempBackground" type="ColorRect" parent="." unique_id=481581813]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.12877646, 0.17266181, 0.23037317, 1)
 
-[node name="menuButtons" type="Node" parent="." unique_id=1216563172]
+[node name="label" type="Label" parent="." unique_id=1775606548]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.245
+anchor_right = 0.5
+anchor_bottom = 0.245
+offset_left = -111.5
+offset_top = -47.600006
+offset_right = 111.5
+offset_bottom = 48.399994
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_f44hk")
+theme_override_font_sizes/font_size = 80
+text = "Game"
 
-[node name="vBoxContainer" type="VBoxContainer" parent="menuButtons" unique_id=875864258]
+[node name="vButtons" type="VBoxContainer" parent="." unique_id=875864258]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -16.0
-offset_right = 4.0
-offset_bottom = 16.0
+offset_left = -125.5
+offset_top = -134.5
+offset_right = 125.5
+offset_bottom = 134.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="bStart" type="Button" parent="menuButtons/vBoxContainer" unique_id=959574943]
+[node name="bStart" type="Button" parent="vButtons" unique_id=959574943]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4jglm")
+theme_override_font_sizes/font_size = 65
+text = "Start"
 
-[node name="bExit" type="Button" parent="menuButtons/vBoxContainer" unique_id=913398483]
+[node name="bSettings" type="Button" parent="vButtons" unique_id=743451809]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4jglm")
+theme_override_font_sizes/font_size = 65
+text = "Settings"
 
-[node name="bSettings" type="Button" parent="menuButtons/vBoxContainer" unique_id=1765626615]
+[node name="bExit" type="Button" parent="vButtons" unique_id=707374909]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4jglm")
+theme_override_font_sizes/font_size = 65
+text = "Exit
+"
