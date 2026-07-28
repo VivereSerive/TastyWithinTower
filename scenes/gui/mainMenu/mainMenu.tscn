@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://chgq7nc0keekd" path="res://assets/fonts/urbanist/static/Urbanist-ExtraBold.ttf" id="1_4jglm"]
 [ext_resource type="FontFile" uid="uid://bwdem61a18xg3" path="res://assets/fonts/urbanist/static/Urbanist-BoldItalic.ttf" id="1_f44hk"]
+[ext_resource type="Script" uid="uid://c8orlnvb6ditl" path="res://scripts/gui/mainMenu/mainMenu.gd" id="1_i0y58"]
 
 [node name="mainMenu" type="Control" unique_id=1050332981]
 layout_mode = 3
@@ -12,6 +13,7 @@ offset_top = 2.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i0y58")
 
 [node name="tempBackground" type="ColorRect" parent="." unique_id=481581813]
 layout_mode = 1
@@ -39,7 +41,7 @@ theme_override_fonts/font = ExtResource("1_f44hk")
 theme_override_font_sizes/font_size = 80
 text = "Game"
 
-[node name="vButtons" type="VBoxContainer" parent="." unique_id=875864258]
+[node name="btnManager" type="VBoxContainer" parent="." unique_id=875864258]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -53,21 +55,33 @@ offset_bottom = 134.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="bStart" type="Button" parent="vButtons" unique_id=959574943]
+[node name="btnInDev" type="Button" parent="btnManager" unique_id=1977037226]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4jglm")
+theme_override_font_sizes/font_size = 65
+text = "InDev
+"
+
+[node name="btnStart" type="Button" parent="btnManager" unique_id=959574943]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4jglm")
 theme_override_font_sizes/font_size = 65
 text = "Start"
 
-[node name="bSettings" type="Button" parent="vButtons" unique_id=743451809]
+[node name="btnSettings" type="Button" parent="btnManager" unique_id=743451809]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4jglm")
 theme_override_font_sizes/font_size = 65
 text = "Settings"
 
-[node name="bExit" type="Button" parent="vButtons" unique_id=707374909]
+[node name="btnExit" type="Button" parent="btnManager" unique_id=707374909]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_4jglm")
 theme_override_font_sizes/font_size = 65
 text = "Exit
 "
+
+[connection signal="pressed" from="btnManager/btnInDev" to="." method="_on_btn_in_dev_pressed"]
+[connection signal="pressed" from="btnManager/btnStart" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="btnManager/btnSettings" to="." method="_on_btn_settings_pressed"]
+[connection signal="pressed" from="btnManager/btnExit" to="." method="_on_btn_exit_pressed"]
