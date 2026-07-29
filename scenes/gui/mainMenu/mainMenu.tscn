@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://chgq7nc0keekd" path="res://assets/fonts/urbanist/static/Urbanist-ExtraBold.ttf" id="1_4jglm"]
 [ext_resource type="FontFile" uid="uid://bwdem61a18xg3" path="res://assets/fonts/urbanist/static/Urbanist-BoldItalic.ttf" id="1_f44hk"]
 [ext_resource type="Script" uid="uid://c8orlnvb6ditl" path="res://scripts/gui/mainMenu/mainMenu.gd" id="1_i0y58"]
+[ext_resource type="Script" uid="uid://clroxud603kxq" path="res://scripts/gui/mainMenu/btnManager.gd" id="3_kk7g0"]
 
 [node name="mainMenu" type="Control" unique_id=1050332981]
 layout_mode = 3
@@ -54,9 +55,11 @@ offset_right = 125.5
 offset_bottom = 134.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("3_kk7g0")
 
 [node name="btnInDev" type="Button" parent="btnManager" unique_id=1977037226]
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_fonts/font = ExtResource("1_4jglm")
 theme_override_font_sizes/font_size = 65
 text = "InDev
@@ -64,18 +67,21 @@ text = "InDev
 
 [node name="btnStart" type="Button" parent="btnManager" unique_id=959574943]
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_fonts/font = ExtResource("1_4jglm")
 theme_override_font_sizes/font_size = 65
 text = "Start"
 
 [node name="btnSettings" type="Button" parent="btnManager" unique_id=743451809]
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_fonts/font = ExtResource("1_4jglm")
 theme_override_font_sizes/font_size = 65
 text = "Settings"
 
 [node name="btnExit" type="Button" parent="btnManager" unique_id=707374909]
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_fonts/font = ExtResource("1_4jglm")
 theme_override_font_sizes/font_size = 65
 text = "Exit
