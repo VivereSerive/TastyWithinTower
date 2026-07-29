@@ -1,5 +1,5 @@
-### playerMove3D.gd
-## Controls Player Movement
+### playerLand3D.gd
+## Controls Player Land
 extends playerState3D
 
 ## Function Decleratiosn

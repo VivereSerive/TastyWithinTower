@@ -1,11 +1,19 @@
-extends Node
+### playerJump3D.gd
+## Controls Player Jump
+extends playerState3D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+## Function Decleratiosn
+func enter() -> void:
 	pass
+
+func exit() -> void:
+	pass
+
+func processInput(event: InputEvent) -> state:
+	return null
+
+func processFrame(delta: float) -> state:
+	return null
+
+func processPhysics(delta: float) -> state:
+	return null
