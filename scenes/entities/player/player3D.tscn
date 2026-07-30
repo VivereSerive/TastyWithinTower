@@ -4,7 +4,6 @@
 [ext_resource type="SpriteFrames" uid="uid://bfnrnqgidkauo" path="res://assets/animation/player/playerAnimation.tres" id="2_5oa1y"]
 [ext_resource type="Script" uid="uid://c5h7ofbcmgwwt" path="res://scripts/stateManager/stateManager.gd" id="3_pv0mc"]
 [ext_resource type="Script" uid="uid://edaacuom7lpx" path="res://scripts/player/playerStates3D/playerMove3D.gd" id="4_7uj2x"]
-[ext_resource type="Script" uid="uid://ct3c6gt5a6520" path="res://scripts/player/playerStates3D/playerSprint3D.gd" id="5_toucx"]
 [ext_resource type="Script" uid="uid://demp1ixmsusf7" path="res://scripts/player/playerStates3D/playerJump3D.gd" id="6_fuu57"]
 [ext_resource type="Script" uid="uid://k31icq8dkj8c" path="res://scripts/player/playerStates3D/playerIdle3D.gd" id="7_5oa1y"]
 [ext_resource type="Script" uid="uid://cudycub1ximdx" path="res://scripts/player/playerStates3D/playerLand3D.gd" id="8_pv0mc"]
@@ -32,9 +31,6 @@ script = ExtResource("3_pv0mc")
 
 [node name="playerMove3D" type="Node" parent="stateManager" unique_id=1288070699]
 script = ExtResource("4_7uj2x")
-
-[node name="playerSprint3D" type="Node" parent="stateManager" unique_id=183144869]
-script = ExtResource("5_toucx")
 
 [node name="playerJump3D" type="Node" parent="stateManager" unique_id=2109547622]
 script = ExtResource("6_fuu57")
