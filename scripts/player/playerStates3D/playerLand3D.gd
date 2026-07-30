@@ -2,6 +2,13 @@
 ## Controls Player Land
 extends playerState3D
 
+## Parameters
+@export_group("State Siblings")
+@export var playerMove3D: state
+@export var playerJump3D: state
+@export var playerIdle3D: state
+@export var playerLand3D: state
+
 ## Function Decleratiosn
 func enter() -> void:
 	pass
