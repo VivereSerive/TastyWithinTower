@@ -30,14 +30,26 @@ shape = SubResource("CapsuleShape3D_51dht")
 script = ExtResource("3_pv0mc")
 initialState = NodePath("playerIdle3D")
 
-[node name="playerMove3D" type="Node" parent="stateManager" unique_id=1288070699]
+[node name="playerMove3D" type="Node" parent="stateManager" unique_id=1288070699 node_paths=PackedStringArray("playerJump3D", "playerIdle3D", "playerLand3D")]
 script = ExtResource("4_7uj2x")
+playerJump3D = NodePath("../playerJump3D")
+playerIdle3D = NodePath("../playerIdle3D")
+playerLand3D = NodePath("../playerLand3D")
 
-[node name="playerJump3D" type="Node" parent="stateManager" unique_id=2109547622]
+[node name="playerJump3D" type="Node" parent="stateManager" unique_id=2109547622 node_paths=PackedStringArray("playerMove3D", "playerIdle3D", "playerLand3D")]
 script = ExtResource("6_fuu57")
+playerMove3D = NodePath("../playerMove3D")
+playerIdle3D = NodePath("../playerIdle3D")
+playerLand3D = NodePath("../playerLand3D")
 
-[node name="playerIdle3D" type="Node" parent="stateManager" unique_id=1113820402]
+[node name="playerIdle3D" type="Node" parent="stateManager" unique_id=1113820402 node_paths=PackedStringArray("playerMove3D", "playerJump3D", "playerLand3D")]
 script = ExtResource("7_5oa1y")
+playerMove3D = NodePath("../playerMove3D")
+playerJump3D = NodePath("../playerJump3D")
+playerLand3D = NodePath("../playerLand3D")
 
-[node name="playerLand3D" type="Node" parent="stateManager" unique_id=649682215]
+[node name="playerLand3D" type="Node" parent="stateManager" unique_id=649682215 node_paths=PackedStringArray("playerMove3D", "playerJump3D", "playerIdle3D")]
 script = ExtResource("8_pv0mc")
+playerMove3D = NodePath("../playerMove3D")
+playerJump3D = NodePath("../playerJump3D")
+playerIdle3D = NodePath("../playerIdle3D")

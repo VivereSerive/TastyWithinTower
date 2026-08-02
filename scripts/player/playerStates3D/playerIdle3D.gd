@@ -6,7 +6,6 @@ extends playerState3D
 @export_group("State Siblings")
 @export var playerMove3D: state
 @export var playerJump3D: state
-@export var playerIdle3D: state
 @export var playerLand3D: state
 
 ## Function Decleratiosn
@@ -17,6 +16,8 @@ func exit() -> void:
 	pass
 
 func processInput(event: InputEvent) -> state:
+	if pMoveKeys.any(Input.is_action_just_pressed):
+		return playerMove3D
 	return null
 
 func processFrame(delta: float) -> state:

@@ -8,3 +8,5 @@ extends state
 var parent: player3D # Hold reference to the player3D class (parent)
 var gravity: int = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed: float = 200.0 
+var jumpPower: float = 4.5
+var pMoveKeys: Array = ["mDown", "mUp", "mLeft", "mRight"]
