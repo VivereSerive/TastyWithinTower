@@ -25,6 +25,7 @@ func processFrame(delta: float) -> state:
 	return null
 
 func processPhysics(delta: float) -> state:
+	var inputDir := Input.get_vector("mLeft", "mRight", "mUp", "mDown")
 	var direction := (parent.transform.basis * Vector3(inputDir.x, 0, inputDir.y)).normalized()
 	
 	if direction:

@@ -9,7 +9,7 @@ var gravity: int = ProjectSettings.get_setting("physics/3d/default_gravity")
 ## Function Declerations
 # Initializing stateManager
 func _ready() -> void:
-	stateManager.init(self)
+	stateManager.init()
 
 # Delegating Logic
 func _unhandled_input(event: InputEvent) -> void:
