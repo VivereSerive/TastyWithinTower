@@ -9,6 +9,24 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_51dht"]
 
+[sub_resource type="Animation" id="Animation_26kug"]
+resource_name = "idle"
+
+[sub_resource type="Animation" id="Animation_5oa1y"]
+resource_name = "jump"
+
+[sub_resource type="Animation" id="Animation_pv0mc"]
+resource_name = "move"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7uj2x"]
+_data = {
+&"idle": SubResource("Animation_26kug"),
+&"jump": SubResource("Animation_5oa1y"),
+&"move": SubResource("Animation_pv0mc")
+}
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_balef"]
+
 [node name="player3D" type="CharacterBody3D" unique_id=925378079]
 script = ExtResource("1_26kug")
 
@@ -46,3 +64,10 @@ playerJump3D = NodePath("../playerJump3D")
 
 [node name="playerAnimationControl" type="AnimationPlayer" parent="." unique_id=1392730735]
 root_node = NodePath("../playerVisual")
+libraries/ = SubResource("AnimationLibrary_7uj2x")
+
+[node name="playerAnimationTree" type="AnimationTree" parent="." unique_id=1344705965]
+root_node = NodePath("../playerVisual")
+tree_root = SubResource("AnimationNodeBlendSpace2D_balef")
+anim_player = NodePath("../playerAnimationControl")
+parameters/blend_position = 0.0
