@@ -4,7 +4,11 @@ extends CharacterBody3D
 
 ## Parameters
 var gravity: int = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+# Node References
 @onready var stateManager: Node = $stateManager
+@onready var pModel: AnimatedSprite3D = $playerVisual/playerModel
+@onready var pAnimationControl: AnimationPlayer = $playerAnimationControl
 
 ## Function Declerations
 # Initializing stateManager
@@ -21,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	# Apply Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
+		
 	move_and_slide()
 
 func _process(delta: float) -> void:

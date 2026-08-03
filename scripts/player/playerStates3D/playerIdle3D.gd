@@ -6,7 +6,6 @@ extends playerState3D
 @export_group("State Siblings")
 @export var playerMove3D: state
 @export var playerJump3D: state
-@export var playerLand3D: state
 
 ## Function Decleratiosn
 func enter() -> void:

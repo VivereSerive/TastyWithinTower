@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://edaacuom7lpx" path="res://scripts/player/playerStates3D/playerMove3D.gd" id="4_7uj2x"]
 [ext_resource type="Script" uid="uid://demp1ixmsusf7" path="res://scripts/player/playerStates3D/playerJump3D.gd" id="6_fuu57"]
 [ext_resource type="Script" uid="uid://k31icq8dkj8c" path="res://scripts/player/playerStates3D/playerIdle3D.gd" id="7_5oa1y"]
-[ext_resource type="Script" uid="uid://cudycub1ximdx" path="res://scripts/player/playerStates3D/playerLand3D.gd" id="8_pv0mc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_51dht"]
 
@@ -20,7 +19,7 @@ transform = Transform3D(5.99, 0, 0, 0, 5.99, 0, 0, 0, 5.99, 0, 0, 0)
 billboard = 2
 texture_filter = 0
 sprite_frames = ExtResource("2_5oa1y")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="playerCollision" type="CollisionShape3D" parent="." unique_id=1697480593]
@@ -30,26 +29,20 @@ shape = SubResource("CapsuleShape3D_51dht")
 script = ExtResource("3_pv0mc")
 initialState = NodePath("playerIdle3D")
 
-[node name="playerMove3D" type="Node" parent="stateManager" unique_id=1288070699 node_paths=PackedStringArray("playerJump3D", "playerIdle3D", "playerLand3D")]
+[node name="playerMove3D" type="Node" parent="stateManager" unique_id=1288070699 node_paths=PackedStringArray("playerJump3D", "playerIdle3D")]
 script = ExtResource("4_7uj2x")
 playerJump3D = NodePath("../playerJump3D")
 playerIdle3D = NodePath("../playerIdle3D")
-playerLand3D = NodePath("../playerLand3D")
 
-[node name="playerJump3D" type="Node" parent="stateManager" unique_id=2109547622 node_paths=PackedStringArray("playerMove3D", "playerIdle3D", "playerLand3D")]
+[node name="playerJump3D" type="Node" parent="stateManager" unique_id=2109547622 node_paths=PackedStringArray("playerMove3D", "playerIdle3D")]
 script = ExtResource("6_fuu57")
 playerMove3D = NodePath("../playerMove3D")
 playerIdle3D = NodePath("../playerIdle3D")
-playerLand3D = NodePath("../playerLand3D")
 
-[node name="playerIdle3D" type="Node" parent="stateManager" unique_id=1113820402 node_paths=PackedStringArray("playerMove3D", "playerJump3D", "playerLand3D")]
+[node name="playerIdle3D" type="Node" parent="stateManager" unique_id=1113820402 node_paths=PackedStringArray("playerMove3D", "playerJump3D")]
 script = ExtResource("7_5oa1y")
 playerMove3D = NodePath("../playerMove3D")
 playerJump3D = NodePath("../playerJump3D")
-playerLand3D = NodePath("../playerLand3D")
 
-[node name="playerLand3D" type="Node" parent="stateManager" unique_id=649682215 node_paths=PackedStringArray("playerMove3D", "playerJump3D", "playerIdle3D")]
-script = ExtResource("8_pv0mc")
-playerMove3D = NodePath("../playerMove3D")
-playerJump3D = NodePath("../playerJump3D")
-playerIdle3D = NodePath("../playerIdle3D")
+[node name="playerAnimationControl" type="AnimationPlayer" parent="." unique_id=1392730735]
+root_node = NodePath("../playerVisual")
