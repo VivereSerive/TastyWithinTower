@@ -6,6 +6,7 @@ extends CharacterBody3D
 var gravity: int = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Node References
+@onready var mainCamera3D = %mainCamera3D
 @onready var stateManager: Node = $stateManager
 @onready var pModel: AnimatedSprite3D = $playerVisual/playerModel
 @onready var pAnimationControl: AnimationPlayer = $playerAnimationControl

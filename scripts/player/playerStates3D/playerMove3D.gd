@@ -24,8 +24,20 @@ func processFrame(delta: float) -> state:
 
 func processPhysics(delta: float) -> state:
 	var inputDir := Input.get_vector("mLeft", "mRight", "mUp", "mDown")
-	var direction := (parent.transform.basis * Vector3(inputDir.x, 0, inputDir.y)).normalized()
+	var pCamBasis = parent.mainCamera3D.global_transform.basis
+
+	# Calculate player movement relative to the global camera
+	var pCamRight = pCamBasis.x
+	pCamRight.y = 0
+	pCamRight = pCamRight.normalized()
+
+	var pCamForward = -pCamBasis.z
+	pCamForward.y = 0
+	pCamForward = pCamForward.normalized()
 	
+	var direction = (pCamRight * inputDir.x + pCamForward * inputDir.y).normalized()
+	
+	# Apply Movement
 	if direction:
 		parent.velocity.x = direction.x * speed
 		parent.velocity.z = direction.z * speed
